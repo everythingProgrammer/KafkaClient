@@ -17,7 +17,7 @@ public class ConductorConsumer implements AcknowledgingConsumerAwareMessageListe
     public void onMessage(ConsumerRecord consumerRecord, Acknowledgment acknowledgment, Consumer consumer) {
         System.out.println(consumerRecord.key().toString()+" - "+consumerRecord.value().toString());
         System.out.println(++counter);
-        acknowledgment.acknowledge();
+//        acknowledgment.acknowledge();
     }
 
 }

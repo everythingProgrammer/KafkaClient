@@ -7,6 +7,7 @@
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.0.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
+
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>KafkaClient</artifactId>
@@ -16,10 +17,30 @@
 	<properties>
 		<java.version>17</java.version>
 	</properties>
+
+	<repositories>
+		<repository>
+			<id>splunk-artifactory</id>
+			<name>Splunk Releases</name>
+			<url>https://splunk.jfrog.io/splunk/ext-releases-local</url>
+		</repository>
+	</repositories>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.splunk.logging</groupId>
+			<artifactId>splunk-library-javalogging</artifactId>
+			<version>1.8.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.kafka</groupId>
@@ -46,6 +67,13 @@
 			<artifactId>kafka-clients</artifactId>
 			<version>3.0.0</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-log4j2 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
+			<version>3.0.4</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

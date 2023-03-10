@@ -9,4 +9,4 @@ sasljaasconfig: org.apache.kafka.common.security.plain.PlainLoginModule required
 saslmechanism: SASL_SSL
 keydeserializer: org.apache.kafka.common.serialization.StringDeserializer
 valuedeserializer: org.apache.kafka.common.serialization.StringDeserializer
-groupid: app-5
+groupid: app-6
