@@ -1,9 +1,9 @@
 name: Java Build Setup
 on: [workflow_dispatch]
 jobs:
-  environment: alpha
-  test:
+  jobname:
     runs-on: ubuntu-latest
+    environment: alpha
     steps:
       - name: Get Code
         uses: actions/checkout@v3
