@@ -1,0 +1,25 @@
+name: Java Build Setup
+on: [workflow_dispatch]
+jobs:
+  environment: alpha
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v3
+      - name: Install Java on Runner
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+        check-latest: true
+      - name: Set up Maven
+        uses: stCarolas/setup-maven@v4.5
+        with:
+          maven-version: 3.8.2
+      - name: Build Image Using Maven
+        run : mvn clean install
+      - name: Print Env Variable
+        run : |
+          echo ${{ vars.VAR_1 }}
+          echo ${{ vars.VAR_2 }}
