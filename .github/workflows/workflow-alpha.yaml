@@ -1,7 +1,7 @@
 name: Java Build Setup
 on: [workflow_dispatch,push]
 jobs:
-  jobname:
+  Build Job:
     runs-on: ubuntu-latest
     environment: alpha
     steps:

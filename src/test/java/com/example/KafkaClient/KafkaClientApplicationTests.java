@@ -15,7 +15,7 @@ class KafkaClientApplicationTests {
 	@Test
 	void contextLoads() {
 		System.out.println("lemma");
-		assertTrue(true);
+		assertTrue(false);
 	}
 
 }
